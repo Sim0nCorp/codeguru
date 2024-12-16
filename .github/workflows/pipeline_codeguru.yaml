@@ -20,7 +20,7 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@main
               with:
-                role-to-assume: arn:aws:iam::852318003143:role/my-gh-role
+                role-to-assume: arn:aws:iam::852318003143:role/innovatieweek-codeguru
                 aws-region: eu-central-1
                 mask-aws-account-id: no
 
