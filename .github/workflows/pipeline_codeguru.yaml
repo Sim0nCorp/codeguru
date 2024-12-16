@@ -1,0 +1,25 @@
+name: codeguru
+
+on:
+  push:
+    branches: main
+    pull_request:
+        branches: main
+  workflow_dispatch: 
+
+
+jobs:
+    codeguru:
+        runs-on: ubuntu-latest
+        environment: ci
+        permissions:
+            security-events: write
+        steps:
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@main
+              with:
+                role-to-assume: arn:aws:iam::852318003143:role/my-gh-role
+                aws-region: eu-central-1
+                mask-aws-account-id: no
+
+        
